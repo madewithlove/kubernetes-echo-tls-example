@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
   name: main-ingress
 spec:
   tls:
   - hosts:
     - app1.tonysm.com
     - app2.tonysm.com
-    secretName: letsencrypt-staging
+    secretName: letsencrypt-prod
   rules:
     - host: app1.tonysm.com
       http:
