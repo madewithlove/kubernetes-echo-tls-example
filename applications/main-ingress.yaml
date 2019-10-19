@@ -10,6 +10,7 @@ spec:
   - hosts:
     - app1.tonysm.com
     - app2.tonysm.com
+    - app3.tonysm.com
     secretName: letsencrypt-prod
   rules:
     - host: app1.tonysm.com
@@ -23,4 +24,10 @@ spec:
         paths:
           - backend:
               serviceName: app2
+              servicePort: 80
+    - host: app3.tonysm.com
+      http:
+        paths:
+          - backend:
+              serviceName: app3
               servicePort: 80
